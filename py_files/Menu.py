@@ -1,3 +1,4 @@
+import os
 import time
 import tkinter as tk
 from tkinter import ttk
@@ -28,6 +29,9 @@ header_color = '#53366b'
 visualisation_frame_color = "#ffffff"
 plt.ioff()
 
+# change working directory to the current file location
+os.chdir(os.path.dirname(__file__))
+
 # ------------------------------- ROOT WINDOW ----------------------------------
 
 
@@ -49,7 +53,7 @@ class TkinterApp(tk.Tk):
         self.resizable(0, 0)
         self.title('Attendance Tracking System')
         self.config(background=selectionbar_color)
-        icon = tk.PhotoImage(file='images\\LU_logo.png')
+        icon = tk.PhotoImage(file='images/LU_logo.png')
         self.iconphoto(True, icon)
 
         # ---------------- HEADER ------------------------

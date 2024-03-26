@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+import os
 
 # -------------------------- DEFINING GLOBAL VARIABLES -------------------------
 
@@ -7,6 +8,10 @@ selectionbar_color = '#eff5f6'
 sidebar_color = '#F5E1FD'
 header_color = '#53366b'
 visualisation_frame_color = "#ffffff"
+
+# Set the working directory to the directory where the script is located
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+print(os.getcwd())
 
 # ------------------------------- ROOT WINDOW ----------------------------------
 
@@ -29,7 +34,7 @@ class TkinterApp(tk.Tk):
         self.resizable(0, 0)
         self.title('Attendance Tracking System')
         self.config(background=selectionbar_color)
-        icon = tk.PhotoImage(file='images\\LU_logo.png')
+        icon = tk.PhotoImage(file='images/LU_logo.png')
         self.iconphoto(True, icon)
 
         # ---------------- HEADER ------------------------
